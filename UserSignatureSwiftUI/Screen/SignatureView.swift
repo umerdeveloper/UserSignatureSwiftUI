@@ -65,7 +65,7 @@ struct SignatureView: View {
                     
                 }
                 .padding()
-                NavigationLink(destination: DrawSignatureView(), isActive: $didTapGet) {
+                NavigationLink(destination: DrawSignatureView(image: $signature), isActive: $didTapGet) {
                     Button(action: getSignature) {
                         VStack {
                             HStack {
@@ -83,10 +83,24 @@ struct SignatureView: View {
                 }
             }
         }
+        .onAppear {
+            fetchImage()
+        }
     }
     func getSignature() {
         self.didTapGet.toggle()
     }
+    
+    func fetchImage() {
+        if let data = UserDefaults.standard.value(forKey: "signature") {
+            if let image = UIImage(data: data as! Data) {
+                DispatchQueue.main.async {
+                    self.signature = Image(uiImage: image)
+                }
+            }
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
