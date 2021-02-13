@@ -64,7 +64,8 @@ struct SignatureView: View {
                         
                         signature?
                             .resizable()
-                            .frame(width: 100, height: 64)
+                            .frame(width: 100, height: 100)
+                            .foregroundColor(.red)
                         
                     }
                     .padding()
