@@ -12,6 +12,8 @@
 		CB52E61C25D7953400DE9E42 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB52E61B25D7953400DE9E42 /* SignatureView.swift */; };
 		CB52E61E25D7953800DE9E42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB52E61D25D7953800DE9E42 /* Assets.xcassets */; };
 		CB52E62425D7953800DE9E42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB52E62225D7953800DE9E42 /* LaunchScreen.storyboard */; };
+		CB52E63625D7AB7200DE9E42 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB52E63525D7AB7200DE9E42 /* Signature.swift */; };
+		CB52E63925D7ABDB00DE9E42 /* DrawSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB52E63825D7ABDB00DE9E42 /* DrawSignatureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		CB52E61D25D7953800DE9E42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB52E62325D7953800DE9E42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB52E62525D7953800DE9E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB52E63525D7AB7200DE9E42 /* Signature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signature.swift; sourceTree = "<group>"; };
+		CB52E63825D7ABDB00DE9E42 /* DrawSignatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawSignatureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				CB52E61B25D7953400DE9E42 /* SignatureView.swift */,
+				CB52E63525D7AB7200DE9E42 /* Signature.swift */,
+				CB52E63825D7ABDB00DE9E42 /* DrawSignatureView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -157,7 +163,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB52E63625D7AB7200DE9E42 /* Signature.swift in Sources */,
 				CB52E61825D7953400DE9E42 /* AppDelegate.swift in Sources */,
+				CB52E63925D7ABDB00DE9E42 /* DrawSignatureView.swift in Sources */,
 				CB52E61A25D7953400DE9E42 /* SceneDelegate.swift in Sources */,
 				CB52E61C25D7953400DE9E42 /* SignatureView.swift in Sources */,
 			);

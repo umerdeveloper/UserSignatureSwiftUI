@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SignatureView: View {
+    @State private var didTapGet: Bool = false
+    @State private var signature: Image? = nil
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -56,14 +59,33 @@ struct SignatureView: View {
                         .foregroundColor(.orange)
                     Spacer()
                     
-                    Image(systemName: "person.fill")
+                    signature?
                         .resizable()
-                        .frame(width: 64, height: 64)
+                        .frame(width: 100, height: 64)
                     
                 }
                 .padding()
+                NavigationLink(destination: DrawSignatureView(), isActive: $didTapGet) {
+                    Button(action: getSignature) {
+                        VStack {
+                            HStack {
+                                Spacer()
+                                Image(systemName: "scribble.variable")
+                                    .resizable()
+                                    .frame(width: 32, height: 32)
+                                Text("Tap to Draw")
+                                    .font(.body)
+                                    .fontWeight(.bold)
+                            }
+                            .padding()
+                        }
+                    }
+                }
             }
         }
+    }
+    func getSignature() {
+        self.didTapGet.toggle()
     }
 }
 
