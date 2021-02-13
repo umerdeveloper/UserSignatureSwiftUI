@@ -16,39 +16,43 @@ struct DrawSignatureView: View {
     let canvasView = PKCanvasRepresentation()
 
     var body: some View {
-        VStack(spacing: 10) {
-            HStack {
-                Text("Signature here")
-                    .foregroundColor(.orange)
-                    .font(.title)
-                Spacer()
-            }
-
-            canvasView
-                .frame(width: 300, height: 256)
-                .cornerRadius(12)
-
-
-            HStack {
-                Spacer()
-                Button(action: clearTapped) {
-                    Text("Clear")
-                        .padding(10)
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
+        ZStack {
+            Color.orange.opacity(0.1)
+                .edgesIgnoringSafeArea(.all)
+            VStack(spacing: 10) {
+                HStack {
+                    Text("Signature here")
+                        .foregroundColor(.orange)
+                        .font(.title)
+                    Spacer()
                 }
 
-                Button(action: saveTapped) {
-                    Text("Save")
-                        .padding(10)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
+                canvasView
+                    .frame(width: 300, height: 256)
+                    .cornerRadius(12)
+
+
+                HStack {
+                    Spacer()
+                    Button(action: clearTapped) {
+                        Text("Clear")
+                            .padding(10)
+                            .background(Color.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(12)
+                    }
+
+                    Button(action: saveTapped) {
+                        Text("Save")
+                            .padding(10)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(12)
+                    }
                 }
             }
+            .frame(width: UIScreen.main.bounds.width / 1.4, height: UIScreen.main.bounds.height / 1.8)
         }
-        .frame(width: UIScreen.main.bounds.width / 1.4, height: UIScreen.main.bounds.height / 1.8)
     }
 
     func clearTapped() {

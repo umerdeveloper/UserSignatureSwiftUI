@@ -13,71 +13,75 @@ struct SignatureView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Image("profile")
-                    .resizable()
-                    .frame(width: 256, height: 256)
-                    .clipShape(Circle())
-                    .shadow(radius: 10)
-                    
-                    .navigationBarTitle(Text("Profile"))
-                
-                HStack {
-                    Text("Name: ")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.orange)
-                    Spacer()
-                    Text("Queen")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.gray)
-                }
-                .padding()
-                
-                Divider()
-                
-                HStack {
-                    Text("Age: ")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.orange)
-                    Spacer()
-                    Text("12")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.gray)
-                }
-                .padding()
-                
-                Divider()
-                
-                HStack {
-                    Text("Signature")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.orange)
-                    Spacer()
-                    
-                    signature?
+            ZStack {
+                Color.orange.opacity(0.1)
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    Image("profile")
                         .resizable()
-                        .frame(width: 100, height: 64)
+                        .frame(width: 256, height: 256)
+                        .clipShape(Circle())
+                        .shadow(radius: 10)
+                        
+                        .navigationBarTitle(Text("Profile"))
                     
-                }
-                .padding()
-                NavigationLink(destination: DrawSignatureView(image: $signature), isActive: $didTapGet) {
-                    Button(action: getSignature) {
-                        VStack {
-                            HStack {
-                                Spacer()
-                                Image(systemName: "scribble.variable")
-                                    .resizable()
-                                    .frame(width: 32, height: 32)
-                                Text("Tap to Draw")
-                                    .font(.body)
-                                    .fontWeight(.bold)
+                    HStack {
+                        Text("Name: ")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.orange)
+                        Spacer()
+                        Text("Queen")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.gray)
+                    }
+                    .padding()
+                    
+                    Divider()
+                    
+                    HStack {
+                        Text("Age: ")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.orange)
+                        Spacer()
+                        Text("12")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.gray)
+                    }
+                    .padding()
+                    
+                    Divider()
+                    
+                    HStack {
+                        Text("Signature")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.orange)
+                        Spacer()
+                        
+                        signature?
+                            .resizable()
+                            .frame(width: 100, height: 64)
+                        
+                    }
+                    .padding()
+                    NavigationLink(destination: DrawSignatureView(image: $signature), isActive: $didTapGet) {
+                        Button(action: getSignature) {
+                            VStack {
+                                HStack {
+                                    Spacer()
+                                    Image(systemName: "scribble.variable")
+                                        .resizable()
+                                        .frame(width: 32, height: 32)
+                                    Text("Tap to Draw")
+                                        .font(.body)
+                                        .fontWeight(.bold)
+                                }
+                                .padding()
                             }
-                            .padding()
                         }
                     }
                 }
